@@ -3,258 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raabta Internet Cafe</title>
+
+<title>RAABTA INTERNET CAFE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0b1020;
-    color:white;
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
-header{
-    background:linear-gradient(135deg,#000428,#004e92);
-    padding:30px;
-    text-align:center;
-}
-
-header h1{
-    font-size:3rem;
-    color:gold;
-}
-
-header p{
-    font-size:1.2rem;
-    margin-top:10px;
-}
+/* HERO */
 
 .hero{
-    text-align:center;
-    padding:40px 20px;
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.75),
+rgba(0,0,0,.75)),
+url('poster.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-.hero img{
-    width:90%;
-    max-width:900px;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(255,215,0,0.5);
+.hero-content h1{
+font-size:80px;
+font-family:'Cinzel',serif;
+color:gold;
+text-shadow:0 0 20px gold;
 }
 
-.hero h2{
-    margin-top:25px;
-    color:gold;
+.hero-content h2{
+font-size:35px;
+letter-spacing:5px;
+margin-bottom:15px;
 }
 
-.services{
-    padding:50px 20px;
-}
-
-.section-title{
-    text-align:center;
-    color:gold;
-    margin-bottom:30px;
-    font-size:2rem;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#131d38;
-    padding:20px;
-    border-radius:15px;
-    border:1px solid gold;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    color:gold;
-    margin-bottom:10px;
-}
-
-.about{
-    padding:50px 20px;
-    text-align:center;
-    background:#10172b;
-}
-
-.contact{
-    padding:50px 20px;
-    text-align:center;
-}
-
-.contact-box{
-    max-width:700px;
-    margin:auto;
-    background:#131d38;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid gold;
+.hero-content p{
+font-size:20px;
+margin-bottom:30px;
 }
 
 .btn{
-    display:inline-block;
-    background:gold;
-    color:black;
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:8px;
-    margin-top:15px;
-    font-weight:bold;
+background:gold;
+color:black;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 20px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
+/* SERVICES */
+
+.services{
+padding:80px 20px;
 }
+
+.title{
+text-align:center;
+font-size:45px;
+color:gold;
+margin-bottom:40px;
+font-family:'Cinzel',serif;
+}
+
+.slider{
+display:flex;
+overflow-x:auto;
+gap:25px;
+padding:20px;
+scroll-snap-type:x mandatory;
+}
+
+.slider::-webkit-scrollbar{
+display:none;
+}
+
+.card{
+min-width:320px;
+height:240px;
+
+background:
+linear-gradient(
+145deg,
+#081220,
+#15294d
+);
+
+border:2px solid gold;
+border-radius:25px;
+
+padding:25px;
+
+scroll-snap-align:center;
+
+box-shadow:
+0 0 20px rgba(255,215,0,.3);
+
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:gold;
+font-size:26px;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.6;
+}
+
+/* FEATURES */
+
+.features{
+padding:80px 20px;
+background:#0d1222;
+}
+
+.feature-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:#111a30;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid gold;
+}
+
+.feature h3{
+color:gold;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 20px;
+text-align:center;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:#111a30;
+padding:35px;
+border-radius:25px;
+border:2px solid gold;
+}
+
+.contact-box h3{
+color:gold;
+margin-bottom:10px;
+}
+
+.contact-btn{
+display:inline-block;
+margin:10px;
+padding:15px 25px;
+background:gold;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:50px;
+}
+
+/* FOOTER */
 
 footer{
-    background:black;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
+background:black;
+padding:25px;
+text-align:center;
 }
 
-@media(max-width:768px){
-    header h1{
-        font-size:2rem;
-    }
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+
+width:65px;
+height:65px;
+
+background:#25D366;
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:30px;
+text-decoration:none;
+
+box-shadow:0 0 15px rgba(0,0,0,.5);
 }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:50px;
+}
+
+.hero-content h2{
+font-size:24px;
+}
+
+.title{
+font-size:32px;
+}
+
+.card{
+min-width:280px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>RAABTA INTERNET CAFE</h1>
-    <p>Raabta Hai Toh Mumkin Hai</p>
-</header>
-
 <section class="hero">
-    <img src="poster.jpg" alt="Raabta Internet Cafe">
-    <h2>One Stop Solution For All Your Digital Needs</h2>
-</section>
 
-<section class="services">
-    <h2 class="section-title">Our Services</h2>
+<div class="hero-content">
 
-    <div class="service-grid">
+<h1>RAABTA</h1>
 
-        <div class="card">
-            <h3>🎓 Scholarships</h3>
-            <p>Scholarship applications and guidance.</p>
-        </div>
+<h2>INTERNET CAFE</h2>
 
-        <div class="card">
-            <h3>📄 Income & Caste Certificate</h3>
-            <p>New applications and corrections.</p>
-        </div>
+<p>Raabta Hai Toh Mumkin Hai</p>
 
-        <div class="card">
-            <h3>🛡 Insurance</h3>
-            <p>Insurance registration and support.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏦 Bank Account Opening</h3>
-            <p>Assistance with bank account setup.</p>
-        </div>
-
-        <div class="card">
-            <h3>🆔 Aadhaar Services</h3>
-            <p>Aadhaar print and related services.</p>
-        </div>
-
-        <div class="card">
-            <h3>🗳 Voter ID</h3>
-            <p>New registration and corrections.</p>
-        </div>
-
-        <div class="card">
-            <h3>💳 PAN Card</h3>
-            <p>PAN application and correction services.</p>
-        </div>
-
-        <div class="card">
-            <h3>💍 Marriage Certificate</h3>
-            <p>Registration assistance.</p>
-        </div>
-
-        <div class="card">
-            <h3>🌎 Passport Assistance</h3>
-            <p>Application and document support.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏢 Udyam Registration</h3>
-            <p>MSME and business registration services.</p>
-        </div>
-
-        <div class="card">
-            <h3>💰 Loan Assistance</h3>
-            <p>Support for various loan applications.</p>
-        </div>
-
-        <div class="card">
-            <h3>🖨 Online Services</h3>
-            <p>Printout, scanning, online forms and more.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="about">
-    <h2 class="section-title">Why Choose Us?</h2>
-    <p>
-        Fast Service • Reliable Support • Secure Process • Customer Satisfaction
-    </p>
-</section>
-
-<section class="contact">
-    <h2 class="section-title">Contact Us</h2>
-
-    <div class="contact-box">
-        <h3>📞 Phone</h3>
-        <p>7204220856</p>
-
-        <br>
-
-        <h3>📍 Address</h3>
-        <p>Church Road, Hosa Nagar, Ranebennur</p>
-
-        <a class="btn" href="tel:7204220856">Call Now</a>
-    </div>
-</section>
-
-<a class="whatsapp"
-href="https://wa.me/917204220856"
-target="_blank">
-WhatsApp
+<a href="#services" class="btn">
+Explore Services
 </a>
 
-<footer>
-    <p>© 2026 Raabta Internet Cafe | Your Needs, Our Service, A Better Tomorrow</p>
-</footer>
+</div>
 
-</body>
-</html>
+</section>
+
+<section class="
+
+
+
+
+
+
+
+        
+            
+           
+    
+            
+
+
+
+    
+
