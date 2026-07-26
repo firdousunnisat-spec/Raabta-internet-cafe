@@ -14,7 +14,6 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
@@ -29,34 +28,35 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.75),
-rgba(0,0,0,.75)),
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
 url('poster.jpg');
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
 }
 
-.hero-content h1{
-font-size:80px;
+.hero-content{
+padding:30px;
+}
+
+.hero h1{
 font-family:'Cinzel',serif;
+font-size:90px;
 color:gold;
 text-shadow:0 0 20px gold;
+animation:glow 2s infinite alternate;
 }
 
-.hero-content h2{
-font-size:35px;
-letter-spacing:5px;
-margin-bottom:15px;
+.hero h2{
+font-size:32px;
+letter-spacing:6px;
+margin-bottom:20px;
 }
 
-.hero-content p{
+.hero p{
 font-size:20px;
 margin-bottom:30px;
 }
@@ -70,69 +70,64 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* ANIMATION */
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px gold;
+}
+to{
+text-shadow:0 0 35px gold;
+}
+}
+
 /* SERVICES */
 
 .services{
 padding:80px 20px;
+text-align:center;
 }
 
 .title{
-text-align:center;
 font-size:45px;
 color:gold;
-margin-bottom:40px;
 font-family:'Cinzel',serif;
+margin-bottom:40px;
+}
+
+.slider-container{
+max-width:500px;
+margin:auto;
+overflow:hidden;
 }
 
 .slider{
 display:flex;
-overflow-x:auto;
-gap:25px;
-padding:20px;
-scroll-snap-type:x mandatory;
+transition:transform .6s ease;
 }
 
-.slider::-webkit-scrollbar{
-display:none;
-}
-
-.card{
-min-width:320px;
-height:240px;
-
+.service-card{
+min-width:100%;
 background:
-linear-gradient(
-145deg,
-#081220,
-#15294d
-);
+linear-gradient(145deg,#0b1628,#1a3159);
 
 border:2px solid gold;
 border-radius:25px;
 
-padding:25px;
-
-scroll-snap-align:center;
+padding:40px;
 
 box-shadow:
-0 0 20px rgba(255,215,0,.3);
-
-transition:.4s;
+0 0 25px rgba(255,215,0,.3);
 }
 
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
+.service-card h3{
 color:gold;
-font-size:26px;
+font-size:30px;
 margin-bottom:15px;
 }
 
-.card p{
+.service-card p{
 font-size:18px;
-line-height:1.6;
 }
 
 /* FEATURES */
@@ -142,17 +137,18 @@ padding:80px 20px;
 background:#0d1222;
 }
 
-.feature-box{
+.feature-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+max-width:1200px;
+margin:auto;
 }
 
 .feature{
-background:#111a30;
+background:#131f38;
 padding:25px;
 border-radius:20px;
-text-align:center;
 border:1px solid gold;
 }
 
@@ -171,15 +167,10 @@ text-align:center;
 .contact-box{
 max-width:700px;
 margin:auto;
-background:#111a30;
+background:#131f38;
 padding:35px;
 border-radius:25px;
 border:2px solid gold;
-}
-
-.contact-box h3{
-color:gold;
-margin-bottom:10px;
 }
 
 .contact-btn{
@@ -188,9 +179,9 @@ margin:10px;
 padding:15px 25px;
 background:gold;
 color:black;
-font-weight:bold;
 text-decoration:none;
 border-radius:50px;
+font-weight:bold;
 }
 
 /* FOOTER */
@@ -205,43 +196,37 @@ text-align:center;
 
 .whatsapp{
 position:fixed;
-right:20px;
 bottom:20px;
-
+right:20px;
 width:65px;
 height:65px;
-
 background:#25D366;
 border-radius:50%;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
 font-size:30px;
 text-decoration:none;
-
-box-shadow:0 0 15px rgba(0,0,0,.5);
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.hero-content h1{
-font-size:50px;
+.hero h1{
+font-size:55px;
 }
 
-.hero-content h2{
-font-size:24px;
+.hero h2{
+font-size:22px;
 }
 
 .title{
 font-size:32px;
 }
 
-.card{
-min-width:280px;
+.service-card{
+padding:25px;
 }
 
 }
@@ -269,21 +254,141 @@ Explore Services
 
 </section>
 
-<section class="
+<section class="services" id="services">
 
+<h2 class="title">Our Services</h2>
 
+<div class="slider-container">
 
+<div class="slider" id="slider">
 
+<div class="service-card">
+<h3>🎓 Scholarships</h3>
+<p>Scholarship Applications & Guidance</p>
+</div>
 
+<div class="service-card">
+<h3>📄 Income & Caste Certificate</h3>
+<p>New Applications & Corrections</p>
+</div>
 
+<div class="service-card">
+<h3>🆔 Aadhaar Services</h3>
+<p>Aadhaar Print & Online Services</p>
+</div>
 
-        
-            
-           
-    
-            
+<div class="service-card">
+<h3>💳 PAN Card</h3>
+<p>New PAN & Corrections</p>
+</div>
 
+<div class="service-card">
+<h3>🌍 Passport Assistance</h3>
+<p>Application & Document Support</p>
+</div>
 
+<div class="service-card">
+<h3>🏢 Udyam Registration</h3>
+<p>MSME Registration Services</p>
+</div>
 
-    
+<div class="service-card">
+<h3>💰 Loan Assistance</h3>
+<p>Support For Various Loan Applications</p>
+</div>
 
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<h2 class="title">Why Choose Us?</h2>
+
+<div class="feature-grid">
+
+<div class="feature">
+<h3>⚡ Fast Service</h3>
+<p>Quick and Reliable Processing</p>
+</div>
+
+<div class="feature">
+<h3>🔒 Secure</h3>
+<p>Your Documents Are Safe</p>
+</div>
+
+<div class="feature">
+<h3>✅ Trusted</h3>
+<p>Customer Satisfaction First</p>
+</div>
+
+<div class="feature">
+<h3>🤝 Support</h3>
+<p>Friendly Customer Assistance</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<div class="contact-box">
+
+<h3>📍 Address</h3>
+<p>Church Road, Hosa Nagar, Ranebennur</p>
+
+<br>
+
+<h3>📞 Phone</h3>
+<p>7204220856</p>
+
+<br>
+
+<a href="tel:7204220856" class="contact-btn">
+Call Now
+</a>
+
+<a href="https://wa.me/917204220856" class="contact-btn">
+WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© RAABTA INTERNET CAFE • Your Needs, Our Service, A Better Tomorrow
+</footer>
+
+<a href="https://wa.me/917204220856" class="whatsapp">
+💬
+</a>
+
+<script>
+
+let slider=document.getElementById("slider");
+
+let index=0;
+
+setInterval(()=>{
+
+index++;
+
+if(index>=slider.children.length){
+index=0;
+}
+
+slider.style.transform=
+`translateX(-${index*100}%)`;
+
+},3000);
+
+</script>
+
+</body>
+</html>
