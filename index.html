@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raabta Internet Cafe</title>
 
-<title>RAABTA INTERNET CAFE</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,11 +13,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
 font-family:'Poppins',sans-serif;
-background:#1a002b;
+background:linear-gradient(to bottom,#05000d,#170027,#05000d);
 color:white;
 overflow-x:hidden;
 }
@@ -28,7 +28,7 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(80,0,120,.75),rgba(40,0,80,.75)),
+linear-gradient(rgba(40,0,80,.75),rgba(20,0,40,.75)),
 url('poster.jpg');
 background-size:cover;
 background-position:center;
@@ -36,199 +36,148 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:20px;
 }
 
-.hero-content{
-padding:30px;
-}
-
-.hero h1{
-font-family:'Cinzel',serif;
+.hero-content h1{
 font-size:90px;
-color:gold;
-text-shadow:0 0 20px gold;
-animation:glow 2s infinite alternate;
+color:white;
+text-shadow:0 0 25px #b84dff;
+letter-spacing:4px;
 }
 
-.hero h2{
-font-size:32px;
-letter-spacing:6px;
-margin-bottom:20px;
+.hero-content h2{
+font-size:40px;
+margin-top:10px;
+letter-spacing:8px;
 }
 
-.hero p{
-font-size:20px;
-margin-bottom:30px;
+.hero-content p{
+margin-top:20px;
+font-size:24px;
+color:#e5d7ff;
 }
 
 .btn{
-background:gold;
-color:black;
-padding:15px 35px;
-border-radius:50px;
+display:inline-block;
+margin-top:30px;
+padding:15px 40px;
+background:#8a2be2;
+color:white;
 text-decoration:none;
-font-weight:bold;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 0 20px #b84dff;
+transition:.4s;
 }
 
-/* ANIMATION */
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px gold;
-}
-to{
-text-shadow:0 0 35px gold;
-}
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 35px #b84dff;
 }
 
 /* SERVICES */
 
 .services{
-padding:80px 20px;
+padding:90px 10%;
 text-align:center;
 }
 
-.title{
-font-size:45px;
-color:gold;
-font-family:'Cinzel',serif;
-margin-bottom:40px;
+.services h2{
+font-size:50px;
+margin-bottom:50px;
+color:white;
+text-shadow:0 0 15px #b84dff;
 }
 
-.slider-container{
-max-width:500px;
-margin:auto;
-overflow:hidden;
-}
-
-.slider{
-display:flex;
-transition:transform .6s ease;
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .service-card{
-min-width:100%;
-background:
-linear-gradient(145deg,#0b1628,#1a3159);
+background:rgba(120,0,255,.12);
+border:2px solid #b84dff;
+border-radius:20px;
+padding:30px;
+box-shadow:0 0 15px rgba(184,77,255,.6);
+transition:.4s;
+}
 
-border:2px solid gold;
-border-radius:25px;
-
-padding:40px;
-
-box-shadow:
-0 0 25px rgba(255,215,0,.3);
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(184,77,255,1);
 }
 
 .service-card h3{
-color:gold;
-font-size:30px;
-margin-bottom:15px;
-}
-
-.service-card p{
-font-size:18px;
-}
-
-/* FEATURES */
-
-.features{
-padding:80px 20px;
-background:#0d1222;
-}
-
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-}
-
-.feature{
-background:#131f38;
-padding:25px;
-border-radius:20px;
-border:1px solid gold;
-}
-
-.feature h3{
-color:gold;
 margin-bottom:10px;
+font-size:24px;
+}
+
+/* WHY CHOOSE US */
+
+.why{
+padding:90px 10%;
+text-align:center;
+}
+
+.why h2{
+font-size:50px;
+margin-bottom:50px;
+text-shadow:0 0 15px #b84dff;
+}
+
+.why-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.why-card{
+width:260px;
+background:rgba(120,0,255,.12);
+border:2px solid #b84dff;
+border-radius:25px;
+padding:30px;
+box-shadow:0 0 20px rgba(184,77,255,.6);
+transition:.4s;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(184,77,255,1);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:15px;
 }
 
 /* CONTACT */
 
 .contact{
-padding:80px 20px;
+padding:80px 10%;
 text-align:center;
 }
 
-.contact-box{
-max-width:700px;
-margin:auto;
-background:#131f38;
-padding:35px;
-border-radius:25px;
-border:2px solid gold;
+.contact h2{
+font-size:50px;
+margin-bottom:25px;
+text-shadow:0 0 15px #b84dff;
 }
 
-.contact-btn{
-display:inline-block;
-margin:10px;
-padding:15px 25px;
-background:gold;
-color:black;
-text-decoration:none;
-border-radius:50px;
-font-weight:bold;
+.contact p{
+font-size:20px;
+margin:10px 0;
 }
-
-/* FOOTER */
 
 footer{
-background:black;
-padding:25px;
 text-align:center;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
-text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:55px;
-}
-
-.hero h2{
-font-size:22px;
-}
-
-.title{
-font-size:32px;
-}
-
-.service-card{
-padding:25px;
-}
-
+padding:20px;
+background:#0a0015;
+margin-top:40px;
 }
 
 </style>
@@ -256,76 +205,71 @@ Explore Services
 
 <section class="services" id="services">
 
-<h2 class="title">Our Services</h2>
+<h2>OUR SERVICES</h2>
 
-<div class="slider-container">
-
-<div class="slider" id="slider">
+<div class="service-grid">
 
 <div class="service-card">
-<h3>🎓 Scholarships</h3>
-<p>Scholarship Applications & Guidance</p>
+<h3>📄 Online Forms</h3>
+<p>Government & Private Applications</p>
 </div>
 
 <div class="service-card">
-<h3>📄 Income & Caste Certificate</h3>
-<p>New Applications & Corrections</p>
+<h3>🖨 Printing</h3>
+<p>Color & Black White Prints</p>
 </div>
 
 <div class="service-card">
-<h3>🆔 Aadhaar Services</h3>
-<p>Aadhaar Print & Online Services</p>
+<h3>📷 Passport Photos</h3>
+<p>Instant Photo Services</p>
 </div>
 
 <div class="service-card">
-<h3>💳 PAN Card</h3>
-<p>New PAN & Corrections</p>
+<h3>🏦 Banking Services</h3>
+<p>Account Opening & AEPS</p>
 </div>
 
 <div class="service-card">
-<h3>🌍 Passport Assistance</h3>
-<p>Application & Document Support</p>
+<h3>🎓 Scholarship</h3>
+<p>Student Application Assistance</p>
 </div>
 
 <div class="service-card">
-<h3>🏢 Udyam Registration</h3>
-<p>MSME Registration Services</p>
-</div>
-
-<div class="service-card">
-<h3>💰 Loan Assistance</h3>
-<p>Support For Various Loan Applications</p>
-</div>
-
+<h3>✈ Ticket Booking</h3>
+<p>Bus, Train & Flight Tickets</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="features">
+<section class="why">
 
-<h2 class="title">Why Choose Us?</h2>
+<h2>WHY CHOOSE US?</h2>
 
-<div class="feature-grid">
+<div class="why-container">
 
-<div class="feature">
-<h3>⚡ Fast Service</h3>
+<div class="why-card">
+<div class="icon">⚡</div>
+<h3>Fast Service</h3>
 <p>Quick and Reliable Processing</p>
 </div>
 
-<div class="feature">
-<h3>🔒 Secure</h3>
+<div class="why-card">
+<div class="icon">🔒</div>
+<h3>Secure</h3>
 <p>Your Documents Are Safe</p>
 </div>
 
-<div class="feature">
-<h3>✅ Trusted</h3>
+<div class="why-card">
+<div class="icon">👍</div>
+<h3>Trusted</h3>
 <p>Customer Satisfaction First</p>
 </div>
 
-<div class="feature">
-<h3>🤝 Support</h3>
+<div class="why-card">
+<div class="icon">🎧</div>
+<h3>Support</h3>
 <p>Friendly Customer Assistance</p>
 </div>
 
@@ -335,60 +279,17 @@ Explore Services
 
 <section class="contact">
 
-<h2 class="title">Contact Us</h2>
+<h2>CONTACT US</h2>
 
-<div class="contact-box">
-
-<h3>📍 Address</h3>
-<p>Church Road, Hosa Nagar, Ranebennur</p>
-
-<br>
-
-<h3>📞 Phone</h3>
-<p>7204220856</p>
-
-<br>
-
-<a href="tel:7204220856" class="contact-btn">
-Call Now
-</a>
-
-<a href="https://wa.me/917204220856" class="contact-btn">
-WhatsApp
-</a>
-
-</div>
+<p>📍 Raabta Internet Cafe</p>
+<p>📞 +91 XXXXX XXXXX</p>
+<p>📧 raabta@example.com</p>
 
 </section>
 
 <footer>
-© RAABTA INTERNET CAFE • Your Needs, Our Service, A Better Tomorrow
+© 2026 Raabta Internet Cafe | All Rights Reserved
 </footer>
-
-<a href="https://wa.me/917204220856" class="whatsapp">
-💬
-</a>
-
-<script>
-
-let slider=document.getElementById("slider");
-
-let index=0;
-
-setInterval(()=>{
-
-index++;
-
-if(index>=slider.children.length){
-index=0;
-}
-
-slider.style.transform=
-`translateX(-${index*100}%)`;
-
-},3000);
-
-</script>
 
 </body>
 </html>
